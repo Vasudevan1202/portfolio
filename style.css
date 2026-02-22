@@ -26,15 +26,14 @@ body {
 .header {
   position: sticky;
   top: 0;
-  background: rgba(15, 23, 42, 0.85);
-  backdrop-filter: blur(12px);
+  width: 100%;
+  background: #1e293b;
   color: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 14px 6%;
   z-index: 1000;
-  transition: all 0.3s ease;
 }
 
 .header.scrolled {
