@@ -143,6 +143,8 @@ body {
 
 /* ===== HERO ===== */
 .hero {
+  width: 100%;
+  max-width: 100%;
   text-align: center;
   padding: 80px 5%;
   background: linear-gradient(to right, #2563eb, #1e3a8a);
