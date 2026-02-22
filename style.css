@@ -10,6 +10,7 @@ html {
 }
 
 body {
+  margin: 0;
   background: #f8fafc;
   color: #1f2937;
   overflow-x: hidden;
@@ -19,18 +20,19 @@ body {
 .header {
   position: sticky;
   top: 0;
-  background: #111;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
   color: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px 5%;
+  padding: 14px 6%;
   z-index: 1000;
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .header.scrolled {
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
 .logo {
@@ -38,22 +40,57 @@ body {
   font-weight: 600;
 }
 
+.logo span {
+  font-size: 12px;
+  font-weight: 400;
+  color: #60a5fa;
+  margin-left: 6px;
+}
+
 /* ===== NAV LINKS ===== */
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 25px;
+  gap: 30px;
 }
 
 .nav-links a {
   color: white;
   text-decoration: none;
   font-size: 14px;
+  position: relative;
   transition: 0.3s;
 }
 
-.nav-links a:hover {
-  color: #2563eb;
+/* Animated underline */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: #2563eb;
+  transition: 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* ===== DARK MODE BUTTON ===== */
+.dark-btn {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.25);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.dark-btn:hover {
+  background: rgba(255,255,255,0.1);
 }
 
 /* ===== HAMBURGER ===== */
@@ -62,17 +99,29 @@ body {
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
-  background: none;
+  background: transparent;
   border: none;
 }
 
 .menu-toggle span {
-  width: 25px;
-  height: 3px;
+  width: 22px;
+  height: 2px;
   background: white;
   transition: 0.3s ease;
 }
 
+/* Animate to X */
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
 /* Animate to X */
 .menu-toggle.active span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
