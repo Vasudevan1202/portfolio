@@ -26,18 +26,14 @@ body {
 .header {
   position: sticky;
   top: 0;
-  width: 100%;
-  background: #1e293b;
+  background: #111;
   color: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 6%;
+  padding: 15px 6%;
   z-index: 1000;
-}
-
-.header.scrolled {
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  transition: 0.3s ease;
 }
 
 .logo {
