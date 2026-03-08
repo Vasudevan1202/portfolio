@@ -1,7 +1,7 @@
 # Portfolio Website
 
 Live Site:
-https://vasudevan1202.github.io/portfolio/
+vasu.work.gd
 
 ## Features
 - Responsive design
