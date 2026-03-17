@@ -1,7 +1,7 @@
 # Portfolio Website
 
 Live Site:
-vasu.work.gd
+www.vasu.work.gd
 
 ## Features
 - Responsive design
