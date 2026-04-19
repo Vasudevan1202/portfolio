@@ -24,12 +24,9 @@ const highlights = [
   },
 ];
 
-export default function About({ isDark }) {
+export default function About() {
   return (
-    <section
-      id="about"
-      className={`py-16 sm:py-24 md:py-32 ${isDark ? 'bg-dark-800' : 'bg-gray-50'}`}
-    >
+    <section id="about" className="py-16 sm:py-24 md:py-32 bg-dark-800">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <motion.div
           initial="hidden"
@@ -42,14 +39,10 @@ export default function About({ isDark }) {
         >
           {/* Section Header */}
           <motion.div className="text-center mb-12 sm:mb-16" variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }}>
-            <motion.p
-              className={`text-xs sm:text-sm font-medium tracking-wider uppercase mb-3 ${
-                isDark ? 'text-neon-blue' : 'text-blue-600'
-              }`}
-            >
+            <motion.p className="text-xs sm:text-sm font-medium tracking-wider uppercase mb-3 text-neon-blue">
               About Me
             </motion.p>
-            <h2 className={`text-3xl sm:text-4xl md:text-5xl font-bold font-poppins ${isDark ? 'text-white' : 'text-dark-900'}`}>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-poppins text-white">
               Who I Am
             </h2>
           </motion.div>
@@ -61,40 +54,35 @@ export default function About({ isDark }) {
               className="relative order-2 lg:order-1"
             >
               <div className="relative w-full aspect-square sm:aspect-square max-w-sm sm:max-w-md mx-auto">
-                {/* Decorative Background */}
                 <div className="absolute inset-0 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 blur-2xl sm:blur-3xl" />
 
-                {/* Main Card */}
-                <div className={`relative h-full rounded-2xl sm:rounded-3xl glass-strong p-6 sm:p-8 ${isDark ? 'bg-dark-700/50' : 'bg-white/80'}`}>
+                <div className="relative h-full rounded-2xl sm:rounded-3xl glass-strong p-6 sm:p-8 bg-dark-700/50">
                   <div className="h-full flex flex-col justify-between">
                     <div>
                       <div className="w-16 sm:w-20 h-16 sm:h-20 rounded-xl sm:rounded-2xl bg-gradient-to-br from-neon-blue to-neon-purple flex items-center justify-center mb-4 sm:mb-6">
                         <span className="text-2xl sm:text-3xl font-bold text-white font-poppins">VM</span>
                       </div>
-                      <h3 className={`text-xl sm:text-2xl font-bold font-poppins mb-2 ${isDark ? 'text-white' : 'text-dark-900'}`}>
+                      <h3 className="text-xl sm:text-2xl font-bold font-poppins mb-2 text-white">
                         Vasudevan M
                       </h3>
-                      <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-dark-500'}`}>
+                      <p className="text-sm text-gray-400">
                         Frontend Developer
                       </p>
                     </div>
 
                     <div className="space-y-2 sm:space-y-3 mt-4">
-                      <div className={`text-sm ${isDark ? 'text-gray-300' : 'text-dark-600'}`}>
+                      <div className="text-sm text-gray-300">
                         Based in India
                       </div>
-                      <div className={`text-sm ${isDark ? 'text-gray-400' : 'text-dark-500'}`}>
+                      <div className="text-sm text-gray-400">
                         Passionate about building modern web experiences
                       </div>
                     </div>
                   </div>
                 </div>
 
-                {/* Floating Badge */}
                 <motion.div
-                  className={`absolute -right-2 sm:-right-4 -bottom-2 sm:-bottom-4 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm ${
-                    isDark ? 'glass bg-dark-600/80' : 'bg-white shadow-lg'
-                  }`}
+                  className="absolute -right-2 sm:-right-4 -bottom-2 sm:-bottom-4 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm glass bg-dark-600/80"
                   animate={{ y: [0, -8, 0] }}
                   transition={{ duration: 3, repeat: Infinity }}
                 >
@@ -109,7 +97,7 @@ export default function About({ isDark }) {
               className="space-y-6 sm:space-y-8 order-1 lg:order-2"
             >
               <div>
-                <p className={`text-base sm:text-lg md:text-xl leading-relaxed ${isDark ? 'text-gray-300' : 'text-dark-600'}`}>
+                <p className="text-base sm:text-lg md:text-xl leading-relaxed text-gray-300">
                   I'm a frontend developer focused on building responsive, user-friendly, and visually engaging web applications. I enjoy transforming ideas into real products and constantly improving my skills in modern web technologies.
                 </p>
               </div>
@@ -122,22 +110,15 @@ export default function About({ isDark }) {
                       hidden: { opacity: 0, y: 20 },
                       visible: { opacity: 1, y: 0 },
                     }}
-                    className={`group p-4 sm:p-6 rounded-xl sm:rounded-2xl transition-all duration-300 ${
-                      isDark
-                        ? 'bg-dark-700/50 hover:bg-dark-600/50'
-                        : 'bg-white hover:shadow-lg'
-                    } hover:scale-[1.02]`}
+                    className="group p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-dark-700/50 hover:bg-dark-600/50 transition-all duration-300 hover:scale-[1.02]"
                   >
                     <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-lg sm:rounded-xl bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
-                      <item.icon
-                        size={20}
-                        className={`${isDark ? 'text-neon-blue' : 'text-blue-600'}`}
-                      />
+                      <item.icon size={20} className="text-neon-blue" />
                     </div>
-                    <h4 className={`font-semibold font-poppins mb-1 sm:mb-2 text-sm sm:text-base ${isDark ? 'text-white' : 'text-dark-900'}`}>
+                    <h4 className="font-semibold font-poppins mb-1 sm:mb-2 text-sm sm:text-base text-white">
                       {item.title}
                     </h4>
-                    <p className={`text-xs sm:text-sm ${isDark ? 'text-gray-400' : 'text-dark-500'}`}>
+                    <p className="text-xs sm:text-sm text-gray-400">
                       {item.description}
                     </p>
                   </motion.div>

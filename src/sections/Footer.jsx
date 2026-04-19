@@ -19,13 +19,9 @@ const socialLinks = [
   },
 ];
 
-export default function Footer({ isDark }) {
+export default function Footer() {
   return (
-    <footer
-      className={`py-8 sm:py-12 border-t ${
-        isDark ? 'bg-dark-900 border-white/5' : 'bg-white border-gray-200'
-      }`}
-    >
+    <footer className="py-8 sm:py-12 bg-dark-900 border-t border-white/5">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6">
           {/* Logo & Copyright */}
@@ -38,17 +34,12 @@ export default function Footer({ isDark }) {
             <div className="flex items-center gap-2">
               <span className="text-xl sm:text-2xl font-bold font-poppins">
                 <span className="gradient-text">V</span>
-                <span className={isDark ? 'text-white' : 'text-dark-900'}>M</span>
+                <span className="text-white">M</span>
               </span>
             </div>
-            <p
-              className={`text-xs sm:text-sm ${isDark ? 'text-gray-400' : 'text-dark-500'}`}
-            >
+            <p className="text-xs sm:text-sm text-gray-400">
               Built with{' '}
-              <Heart
-                size={12}
-                className="inline text-neon-pink animate-pulse"
-              />{' '}
+              <Heart size={12} className="inline text-neon-pink animate-pulse" />{' '}
               by Vasudevan M
             </p>
           </motion.div>
@@ -66,18 +57,11 @@ export default function Footer({ isDark }) {
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`p-2 sm:p-3 rounded-lg sm:rounded-xl transition-all duration-300 ${
-                  isDark
-                    ? 'bg-dark-800 hover:bg-dark-700'
-                    : 'bg-gray-100 hover:bg-gray-200'
-                } group`}
+                className="p-2 sm:p-3 rounded-lg sm:rounded-xl bg-dark-800 hover:bg-dark-700 transition-all duration-300 group"
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <social.icon
-                  size={18}
-                  className={`${isDark ? 'text-gray-400' : 'text-dark-500'} group-hover:text-neon-blue transition-colors`}
-                />
+                <social.icon size={18} className="text-gray-400 group-hover:text-neon-blue transition-colors" />
               </motion.a>
             ))}
           </motion.div>
@@ -88,11 +72,7 @@ export default function Footer({ isDark }) {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className={`text-xs sm:text-sm font-medium transition-colors duration-300 ${
-              isDark
-                ? 'text-gray-400 hover:text-neon-blue'
-                : 'text-dark-500 hover:text-blue-600'
-            }`}
+            className="text-xs sm:text-sm font-medium text-gray-400 hover:text-neon-blue transition-colors duration-300"
           >
             Back to top ↑
           </motion.a>
@@ -103,11 +83,7 @@ export default function Footer({ isDark }) {
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           transition={{ delay: 0.5, duration: 0.8 }}
-          className={`mt-6 sm:mt-8 h-px ${
-            isDark
-              ? 'bg-gradient-to-r from-transparent via-white/10 to-transparent'
-              : 'bg-gradient-to-r from-transparent via-gray-200 to-transparent'
-          }`}
+          className="mt-6 sm:mt-8 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"
         />
 
         {/* Copyright Text */}
@@ -115,9 +91,7 @@ export default function Footer({ isDark }) {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.6 }}
-          className={`text-center text-xs mt-6 sm:mt-8 ${
-            isDark ? 'text-gray-500' : 'text-dark-400'
-          }`}
+          className="text-center text-xs mt-6 sm:mt-8 text-gray-500"
         >
           © {new Date().getFullYear()} Vasudevan M. All rights reserved.
         </motion.p>

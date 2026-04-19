@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 import Navbar from './components/Navbar';
 import LoadingScreen from './components/LoadingScreen';
-import CustomCursor from './components/CustomCursor';
 import ScrollProgress from './components/ScrollProgress';
 
 import Hero from './sections/Hero';
@@ -16,16 +15,8 @@ import Footer from './sections/Footer';
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
-  const [isDark, setIsDark] = useState(true);
 
   useEffect(() => {
-    // Check for saved theme preference or default to dark
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-      setIsDark(savedTheme === 'dark');
-    }
-
-    // Prevent scroll during loading
     if (isLoading) {
       document.body.style.overflow = 'hidden';
     } else {
@@ -36,12 +27,6 @@ export default function App() {
       document.body.style.overflow = 'unset';
     };
   }, [isLoading]);
-
-  const toggleTheme = () => {
-    const newTheme = !isDark;
-    setIsDark(newTheme);
-    localStorage.setItem('theme', newTheme ? 'dark' : 'light');
-  };
 
   const handleLoadingComplete = () => {
     setIsLoading(false);
@@ -54,25 +39,24 @@ export default function App() {
       </AnimatePresence>
 
       {!isLoading && (
-        <div className={isDark ? 'dark' : 'light'}>
-          <CustomCursor />
+        <>
           <ScrollProgress />
-          <Navbar isDark={isDark} toggleTheme={toggleTheme} />
+          <Navbar />
 
           <main>
-            <Hero isDark={isDark} />
-            <About isDark={isDark} />
-            <Skills isDark={isDark} />
-            <Projects isDark={isDark} />
-            <Experience isDark={isDark} />
-            <Contact isDark={isDark} />
+            <Hero />
+            <About />
+            <Skills />
+            <Projects />
+            <Experience />
+            <Contact />
           </main>
 
-          <Footer isDark={isDark} />
+          <Footer />
 
           {/* Noise Overlay */}
           <div className="noise-overlay" />
-        </div>
+        </>
       )}
     </>
   );

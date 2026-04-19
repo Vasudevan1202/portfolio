@@ -73,7 +73,7 @@ const projects = [
 
 const categories = ['All', 'React', 'JavaScript'];
 
-export default function Projects({ isDark }) {
+export default function Projects() {
   const [activeFilter, setActiveFilter] = useState('All');
 
   const filteredProjects =
@@ -82,10 +82,7 @@ export default function Projects({ isDark }) {
       : projects.filter((p) => p.category === activeFilter);
 
   return (
-    <section
-      id="projects"
-      className={`py-16 sm:py-24 md:py-32 ${isDark ? 'bg-dark-800' : 'bg-gray-50'}`}
-    >
+    <section id="projects" className="py-16 sm:py-24 md:py-32 bg-dark-800">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <motion.div
           initial="hidden"
@@ -101,18 +98,10 @@ export default function Projects({ isDark }) {
             className="text-center mb-10 sm:mb-16"
             variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }}
           >
-            <motion.p
-              className={`text-xs sm:text-sm font-medium tracking-wider uppercase mb-3 ${
-                isDark ? 'text-neon-cyan' : 'text-cyan-600'
-              }`}
-            >
+            <motion.p className="text-xs sm:text-sm font-medium tracking-wider uppercase mb-3 text-neon-cyan">
               My Work
             </motion.p>
-            <h2
-              className={`text-3xl sm:text-4xl md:text-5xl font-bold font-poppins ${
-                isDark ? 'text-white' : 'text-dark-900'
-              }`}
-            >
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-poppins text-white">
               Featured Projects
             </h2>
           </motion.div>
@@ -129,9 +118,7 @@ export default function Projects({ isDark }) {
                 className={`px-4 sm:px-6 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 flex items-center gap-1.5 sm:gap-2 ${
                   activeFilter === category
                     ? 'bg-gradient-to-r from-neon-blue to-neon-purple text-white shadow-lg shadow-neon-blue/30'
-                    : isDark
-                    ? 'bg-dark-700 text-gray-300 hover:bg-dark-600'
-                    : 'bg-gray-200 text-dark-600 hover:bg-gray-300'
+                    : 'bg-dark-700 text-gray-300 hover:bg-dark-600'
                 }`}
               >
                 <Filter size={12} className="sm:text-sm" />
@@ -156,11 +143,7 @@ export default function Projects({ isDark }) {
                   visible: { opacity: 1, y: 0 },
                 }}
                 whileHover={{ y: -5 }}
-                className={`group rounded-xl sm:rounded-2xl overflow-hidden transition-all duration-300 ${
-                  isDark
-                    ? 'bg-dark-700/50 hover:bg-dark-600/50'
-                    : 'bg-white hover:shadow-2xl'
-                }`}
+                className="group rounded-xl sm:rounded-2xl overflow-hidden bg-dark-700/50 hover:bg-dark-600/50 transition-all duration-300"
               >
                 {/* Image */}
                 <div className="relative aspect-video overflow-hidden">
@@ -180,7 +163,7 @@ export default function Projects({ isDark }) {
                       rel="noopener noreferrer"
                       className="p-2 sm:p-3 rounded-full glass hover:bg-white/20 transition-colors"
                     >
-                      <Github size={18} className="sm:text-20" />
+                      <Github size={18} />
                     </a>
                     <a
                       href={project.live}
@@ -188,25 +171,17 @@ export default function Projects({ isDark }) {
                       rel="noopener noreferrer"
                       className="p-2 sm:p-3 rounded-full glass hover:bg-white/20 transition-colors"
                     >
-                      <ExternalLink size={18} className="sm:text-20" />
+                      <ExternalLink size={18} />
                     </a>
                   </div>
                 </div>
 
                 {/* Content */}
                 <div className="p-4 sm:p-6">
-                  <h3
-                    className={`text-lg sm:text-xl font-bold font-poppins mb-2 ${
-                      isDark ? 'text-white' : 'text-dark-900'
-                    }`}
-                  >
+                  <h3 className="text-lg sm:text-xl font-bold font-poppins mb-2 text-white">
                     {project.title}
                   </h3>
-                  <p
-                    className={`text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-2 ${
-                      isDark ? 'text-gray-400' : 'text-dark-500'
-                    }`}
-                  >
+                  <p className="text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-2 text-gray-400">
                     {project.description}
                   </p>
 
@@ -215,11 +190,7 @@ export default function Projects({ isDark }) {
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className={`px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-xs ${
-                          isDark
-                            ? 'bg-dark-600 text-gray-300'
-                            : 'bg-gray-100 text-dark-600'
-                        }`}
+                        className="px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-xs bg-dark-600 text-gray-300"
                       >
                         {tag}
                       </span>

@@ -23,10 +23,10 @@ const socialLinks = [
   },
 ];
 
-// Formspree endpoint - Replace with your own form ID from https://formspree.io
+// Formspree endpoint
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mpqkryqa';
 
-export default function Contact({ isDark }) {
+export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -104,10 +104,7 @@ export default function Contact({ isDark }) {
   };
 
   return (
-    <section
-      id="contact"
-      className={`py-16 sm:py-24 md:py-32 ${isDark ? 'bg-dark-800' : 'bg-gray-50'}`}
-    >
+    <section id="contact" className="py-16 sm:py-24 md:py-32 bg-dark-800">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <motion.div
           initial="hidden"
@@ -123,18 +120,10 @@ export default function Contact({ isDark }) {
             className="text-center mb-10 sm:mb-16"
             variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }}
           >
-            <motion.p
-              className={`text-xs sm:text-sm font-medium tracking-wider uppercase mb-3 ${
-                isDark ? 'text-neon-blue' : 'text-blue-600'
-              }`}
-            >
+            <motion.p className="text-xs sm:text-sm font-medium tracking-wider uppercase mb-3 text-neon-blue">
               Get in Touch
             </motion.p>
-            <h2
-              className={`text-3xl sm:text-4xl md:text-5xl font-bold font-poppins ${
-                isDark ? 'text-white' : 'text-dark-900'
-              }`}
-            >
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-poppins text-white">
               Let's Work Together
             </h2>
           </motion.div>
@@ -146,16 +135,10 @@ export default function Contact({ isDark }) {
               className="space-y-6 sm:space-y-8"
             >
               <div>
-                <h3
-                  className={`text-xl sm:text-2xl font-bold font-poppins mb-3 sm:mb-4 ${
-                    isDark ? 'text-white' : 'text-dark-900'
-                  }`}
-                >
+                <h3 className="text-xl sm:text-2xl font-bold font-poppins mb-3 sm:mb-4 text-white">
                   Let's connect
                 </h3>
-                <p
-                  className={`text-sm sm:text-base ${isDark ? 'text-gray-400' : 'text-dark-500'}`}
-                >
+                <p className="text-sm sm:text-base text-gray-400">
                   I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
                 </p>
               </div>
@@ -164,65 +147,35 @@ export default function Contact({ isDark }) {
               <div className="space-y-3 sm:space-y-4">
                 <motion.a
                   href="mailto:vasudevanm18@gmail.com"
-                  className={`flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl transition-all duration-300 ${
-                    isDark
-                      ? 'bg-dark-700/50 hover:bg-dark-600/50'
-                      : 'bg-white hover:shadow-lg'
-                  } group`}
+                  className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl bg-dark-700/50 hover:bg-dark-600/50 transition-all duration-300 group"
                   whileHover={{ x: 5 }}
                 >
-                  <div
-                    className="w-10 sm:w-12 h-10 sm:h-12 rounded-lg sm:rounded-xl bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 flex items-center justify-center group-hover:scale-110 transition-transform shrink-0"
-                  >
+                  <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-lg sm:rounded-xl bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
                     <Mail className="text-neon-blue" size={20} />
                   </div>
                   <div className="min-w-0">
-                    <p
-                      className={`text-xs sm:text-sm ${isDark ? 'text-gray-400' : 'text-dark-500'}`}
-                    >
-                      Email
-                    </p>
-                    <p
-                      className={`font-medium text-sm sm:text-base truncate ${isDark ? 'text-white' : 'text-dark-900'}`}
-                    >
-                      vasudevanm18@gmail.com
-                    </p>
+                    <p className="text-xs sm:text-sm text-gray-400">Email</p>
+                    <p className="font-medium text-sm sm:text-base text-white truncate">vasudevanm18@gmail.com</p>
                   </div>
                 </motion.a>
 
                 <motion.div
-                  className={`flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl ${
-                    isDark ? 'bg-dark-700/50' : 'bg-white'
-                  }`}
+                  className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl bg-dark-700/50"
                   whileHover={{ x: 5 }}
                 >
-                  <div
-                    className="w-10 sm:w-12 h-10 sm:h-12 rounded-lg sm:rounded-xl bg-gradient-to-br from-neon-purple/20 to-neon-pink/20 flex items-center justify-center shrink-0"
-                  >
+                  <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-lg sm:rounded-xl bg-gradient-to-br from-neon-purple/20 to-neon-pink/20 flex items-center justify-center shrink-0">
                     <MapPin className="text-neon-purple" size={20} />
                   </div>
                   <div>
-                    <p
-                      className={`text-xs sm:text-sm ${isDark ? 'text-gray-400' : 'text-dark-500'}`}
-                    >
-                      Location
-                    </p>
-                    <p
-                      className={`font-medium text-sm sm:text-base ${isDark ? 'text-white' : 'text-dark-900'}`}
-                    >
-                      India
-                    </p>
+                    <p className="text-xs sm:text-sm text-gray-400">Location</p>
+                    <p className="font-medium text-sm sm:text-base text-white">India</p>
                   </div>
                 </motion.div>
               </div>
 
               {/* Social Links */}
               <div>
-                <p
-                  className={`text-sm mb-4 ${isDark ? 'text-gray-400' : 'text-dark-500'}`}
-                >
-                  Follow me on social media
-                </p>
+                <p className="text-sm mb-4 text-gray-400">Follow me on social media</p>
                 <div className="flex gap-3 sm:gap-4">
                   {socialLinks.map((social) => (
                     <motion.a
@@ -230,19 +183,11 @@ export default function Contact({ isDark }) {
                       href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`w-10 sm:w-12 h-10 sm:h-12 rounded-lg sm:rounded-xl flex items-center justify-center transition-all duration-300 ${
-                        isDark
-                          ? 'bg-dark-700/50 hover:bg-dark-600/50'
-                          : 'bg-white hover:shadow-lg'
-                      } group`}
+                      className="w-10 sm:w-12 h-10 sm:h-12 rounded-lg sm:rounded-xl flex items-center justify-center bg-dark-700/50 hover:bg-dark-600/50 transition-all duration-300 group"
                       whileHover={{ scale: 1.1, y: -3 }}
                       whileTap={{ scale: 0.95 }}
                     >
-                      <social.icon
-                        size={20}
-                        style={{ color: social.color }}
-                        className="group-hover:scale-110 transition-transform"
-                      />
+                      <social.icon size={20} style={{ color: social.color }} className="group-hover:scale-110 transition-transform" />
                     </motion.a>
                   ))}
                 </div>
@@ -250,23 +195,15 @@ export default function Contact({ isDark }) {
             </motion.div>
 
             {/* Contact Form */}
-            <motion.div
-              variants={{ hidden: { opacity: 0, x: 30 }, visible: { opacity: 1, x: 0 } }}
-            >
+            <motion.div variants={{ hidden: { opacity: 0, x: 30 }, visible: { opacity: 1, x: 0 } }}>
               <form
                 onSubmit={handleSubmit}
-                className={`p-5 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl ${
-                  isDark ? 'bg-dark-700/50' : 'bg-white shadow-xl'
-                }`}
+                className="p-5 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl bg-dark-700/50"
               >
                 <div className="space-y-4 sm:space-y-6">
                   {/* Name Field */}
                   <div>
-                    <label
-                      className={`block text-sm font-medium mb-2 ${
-                        isDark ? 'text-gray-300' : 'text-dark-700'
-                      }`}
-                    >
+                    <label className="block text-sm font-medium mb-2 text-gray-300">
                       Name
                     </label>
                     <input
@@ -275,11 +212,9 @@ export default function Contact({ isDark }) {
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="Your name"
-                      className={`w-full px-4 py-3 rounded-xl outline-none transition-all duration-300 text-sm sm:text-base ${
-                        isDark
-                          ? 'bg-dark-800 border border-white/10 focus:border-neon-blue text-white placeholder-gray-500'
-                          : 'bg-gray-50 border border-gray-200 focus:border-blue-500 text-dark-900 placeholder-gray-400'
-                      } ${errors.name ? 'border-red-500' : ''}`}
+                      className={`w-full px-4 py-3 rounded-xl outline-none transition-all duration-300 text-sm sm:text-base bg-dark-800 border ${
+                        errors.name ? 'border-red-500' : 'border-white/10 focus:border-neon-blue'
+                      } text-white placeholder-gray-500`}
                     />
                     {errors.name && (
                       <p className="text-red-500 text-xs mt-1 flex items-center gap-1">
@@ -290,11 +225,7 @@ export default function Contact({ isDark }) {
 
                   {/* Email Field */}
                   <div>
-                    <label
-                      className={`block text-sm font-medium mb-2 ${
-                        isDark ? 'text-gray-300' : 'text-dark-700'
-                      }`}
-                    >
+                    <label className="block text-sm font-medium mb-2 text-gray-300">
                       Email
                     </label>
                     <input
@@ -303,11 +234,9 @@ export default function Contact({ isDark }) {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="your@email.com"
-                      className={`w-full px-4 py-3 rounded-xl outline-none transition-all duration-300 text-sm sm:text-base ${
-                        isDark
-                          ? 'bg-dark-800 border border-white/10 focus:border-neon-purple text-white placeholder-gray-500'
-                          : 'bg-gray-50 border border-gray-200 focus:border-blue-500 text-dark-900 placeholder-gray-400'
-                      } ${errors.email ? 'border-red-500' : ''}`}
+                      className={`w-full px-4 py-3 rounded-xl outline-none transition-all duration-300 text-sm sm:text-base bg-dark-800 border ${
+                        errors.email ? 'border-red-500' : 'border-white/10 focus:border-neon-purple'
+                      } text-white placeholder-gray-500`}
                     />
                     {errors.email && (
                       <p className="text-red-500 text-xs mt-1 flex items-center gap-1">
@@ -318,11 +247,7 @@ export default function Contact({ isDark }) {
 
                   {/* Message Field */}
                   <div>
-                    <label
-                      className={`block text-sm font-medium mb-2 ${
-                        isDark ? 'text-gray-300' : 'text-dark-700'
-                      }`}
-                    >
+                    <label className="block text-sm font-medium mb-2 text-gray-300">
                       Message
                     </label>
                     <textarea
@@ -331,11 +256,9 @@ export default function Contact({ isDark }) {
                       onChange={handleChange}
                       rows={4}
                       placeholder="Tell me about your project..."
-                      className={`w-full px-4 py-3 rounded-xl outline-none transition-all duration-300 resize-none text-sm sm:text-base ${
-                        isDark
-                          ? 'bg-dark-800 border border-white/10 focus:border-neon-cyan text-white placeholder-gray-500'
-                          : 'bg-gray-50 border border-gray-200 focus:border-blue-500 text-dark-900 placeholder-gray-400'
-                      } ${errors.message ? 'border-red-500' : ''}`}
+                      className={`w-full px-4 py-3 rounded-xl outline-none transition-all duration-300 resize-none text-sm sm:text-base bg-dark-800 border ${
+                        errors.message ? 'border-red-500' : 'border-white/10 focus:border-neon-cyan'
+                      } text-white placeholder-gray-500`}
                     />
                     {errors.message && (
                       <p className="text-red-500 text-xs mt-1 flex items-center gap-1">

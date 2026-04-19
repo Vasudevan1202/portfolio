@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import { ArrowRight, Mail } from 'lucide-react';
+import { ArrowRight, Mail, Download } from 'lucide-react';
 
 const roles = [
   'Frontend Developer',
@@ -8,7 +8,7 @@ const roles = [
   'Future Full Stack Engineer',
 ];
 
-export default function Hero({ isDark }) {
+export default function Hero() {
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
@@ -38,13 +38,10 @@ export default function Hero({ isDark }) {
   return (
     <section
       id="hero"
-      className={`relative min-h-screen flex items-center justify-center overflow-hidden pt-20 ${
-        isDark ? 'bg-dark-900' : 'bg-gray-50'
-      }`}
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-dark-900"
     >
       {/* Animated Background */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Gradient Orbs */}
         <motion.div
           className="absolute -top-20 -right-20 md:-top-40 md:-right-40 w-64 h-64 md:w-96 md:h-96 rounded-full bg-neon-blue/20 blur-3xl"
           animate={{
@@ -64,34 +61,20 @@ export default function Hero({ isDark }) {
           transition={{ duration: 12, repeat: Infinity }}
         />
 
-        {/* Grid Pattern */}
-        <div
-          className={`absolute inset-0 ${
-            isDark
-              ? 'bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)]'
-              : 'bg-[linear-gradient(rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.03)_1px,transparent_1px)]'
-          } bg-[size:50px_50px] md:bg-[size:70px_70px]`}
-        />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:50px_50px] md:bg-[size:70px_70px]" />
 
-        {/* Floating Elements - Hidden on small screens */}
         <motion.div
-          className={`hidden lg:block absolute top-32 left-[15%] w-4 h-4 rounded ${
-            isDark ? 'bg-neon-blue/40' : 'bg-neon-blue/60'
-          }`}
+          className="hidden lg:block absolute top-32 left-[15%] w-4 h-4 rounded bg-neon-blue/40"
           animate={{ y: [0, -30, 0], rotate: [0, 180, 360] }}
           transition={{ duration: 6, repeat: Infinity }}
         />
         <motion.div
-          className={`hidden lg:block absolute top-48 right-[20%] w-3 h-3 rounded-full ${
-            isDark ? 'bg-neon-purple/40' : 'bg-neon-purple/60'
-          }`}
+          className="hidden lg:block absolute top-48 right-[20%] w-3 h-3 rounded-full bg-neon-purple/40"
           animate={{ y: [0, 20, 0], rotate: [0, -180, 0] }}
           transition={{ duration: 8, repeat: Infinity }}
         />
         <motion.div
-          className={`hidden lg:block absolute bottom-40 left-[25%] w-5 h-5 rounded ${
-            isDark ? 'bg-neon-cyan/30' : 'bg-neon-cyan/50'
-          }`}
+          className="hidden lg:block absolute bottom-40 left-[25%] w-5 h-5 rounded bg-neon-cyan/30"
           animate={{ y: [0, -25, 0], rotate: [0, 360, 0] }}
           transition={{ duration: 7, repeat: Infinity }}
         />
@@ -105,9 +88,7 @@ export default function Hero({ isDark }) {
           transition={{ duration: 0.6 }}
         >
           <motion.p
-            className={`text-xs sm:text-sm md:text-base font-medium mb-4 ${
-              isDark ? 'text-neon-blue' : 'text-blue-600'
-            } tracking-wider uppercase`}
+            className="text-xs sm:text-sm md:text-base font-medium mb-4 text-neon-blue tracking-wider uppercase"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
@@ -116,9 +97,7 @@ export default function Hero({ isDark }) {
           </motion.p>
 
           <motion.h1
-            className={`text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold font-poppins mb-4 md:mb-6 ${
-              isDark ? 'text-white' : 'text-dark-900'
-            }`}
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold font-poppins mb-4 md:mb-6 text-white"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
@@ -133,20 +112,14 @@ export default function Hero({ isDark }) {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
-            <p
-              className={`text-base sm:text-lg md:text-2xl lg:text-3xl font-medium ${
-                isDark ? 'text-gray-300' : 'text-dark-600'
-              }`}
-            >
+            <p className="text-base sm:text-lg md:text-2xl lg:text-3xl font-medium text-gray-300">
               {displayText}
               <span className="typing-cursor" />
             </p>
           </motion.div>
 
           <motion.p
-            className={`text-sm sm:text-base md:text-lg lg:text-xl max-w-xl md:max-w-2xl mx-auto mb-8 md:mb-10 px-2 ${
-              isDark ? 'text-gray-400' : 'text-dark-500'
-            }`}
+            className="text-sm sm:text-base md:text-lg lg:text-xl max-w-xl md:max-w-2xl mx-auto mb-8 md:mb-10 px-2 text-gray-400"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.7 }}
@@ -155,36 +128,37 @@ export default function Hero({ isDark }) {
           </motion.p>
 
           <motion.div
-            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4"
+            className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 px-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.9 }}
           >
             <a
               href="#projects"
-              className="group px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-gradient-to-r from-neon-blue to-neon-purple text-white font-semibold flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-neon-blue/30 transition-all duration-300 btn-glow text-sm sm:text-base"
+              className="group px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-gradient-to-r from-neon-blue to-neon-purple text-white font-semibold flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-neon-blue/30 transition-all duration-300 text-sm sm:text-base w-full sm:w-auto"
             >
               View Projects
-              <ArrowRight
-                size={16}
-                className="group-hover:translate-x-1 transition-transform"
-              />
+              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
             </a>
             <a
               href="#contact"
-              className={`px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold flex items-center justify-center gap-2 border-2 text-sm sm:text-base ${
-                isDark
-                  ? 'border-white/20 hover:border-neon-blue hover:text-neon-blue'
-                  : 'border-dark-300 hover:border-blue-600 hover:text-blue-600'
-              } transition-all duration-300`}
+              className="px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold flex items-center justify-center gap-2 border-2 border-white/20 text-white hover:border-neon-blue hover:text-neon-blue transition-all duration-300 text-sm sm:text-base w-full sm:w-auto"
             >
               Contact Me
               <Mail size={16} />
             </a>
+            <a
+              href="/resume/Vasudevan_M_Resume.pdf"
+              download
+              className="group px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-dark-700/50 border border-white/10 font-semibold flex items-center justify-center gap-2 text-white hover:border-neon-purple hover:text-neon-purple transition-all duration-300 text-sm sm:text-base w-full sm:w-auto"
+            >
+              Download Resume
+              <Download size={16} className="group-hover:translate-y-1 transition-transform" />
+            </a>
           </motion.div>
         </motion.div>
 
-        {/* Scroll Indicator - Hidden on small screens */}
+        {/* Scroll Indicator */}
         <motion.div
           className="absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 hidden sm:block"
           initial={{ opacity: 0 }}
@@ -192,16 +166,12 @@ export default function Hero({ isDark }) {
           transition={{ delay: 1.2 }}
         >
           <motion.div
-            className={`w-6 h-10 rounded-full border-2 flex justify-center pt-2 ${
-              isDark ? 'border-white/30' : 'border-dark-300'
-            }`}
+            className="w-6 h-10 rounded-full border-2 border-white/30 flex justify-center pt-2"
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
           >
             <motion.div
-              className={`w-1.5 h-1.5 rounded-full ${
-                isDark ? 'bg-white/50' : 'bg-dark-400'
-              }`}
+              className="w-1.5 h-1.5 rounded-full bg-white/50"
               animate={{ y: [0, 12, 0], opacity: [1, 0.3, 1] }}
               transition={{ duration: 1.5, repeat: Infinity }}
             />

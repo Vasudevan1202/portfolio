@@ -19,11 +19,6 @@
     color: #ffffff;
     overflow-x: hidden;
   }
-
-  body.light {
-    background-color: #f8fafc;
-    color: #0f172a;
-  }
 }
 
 /* Custom Scrollbar */
@@ -35,17 +30,9 @@
   background: #12121a;
 }
 
-.light ::-webkit-scrollbar-track {
-  background: #f1f5f9;
-}
-
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(180deg, #00d4ff, #a855f7);
   border-radius: 4px;
-}
-
-.light ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #00d4ff, #a855f7);
 }
 
 /* Selection */
@@ -59,12 +46,6 @@
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.light .glass {
-  background: rgba(0, 0, 0, 0.05);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .glass-strong {
@@ -105,34 +86,10 @@
   animation: gradient 15s ease infinite;
 }
 
-.light .animated-bg {
-  background: linear-gradient(-45deg, #f8fafc, #f1f5f9, #e2e8f0, #f8fafc);
-  background-size: 400% 400%;
-}
-
 @keyframes gradient {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
-}
-
-/* Custom Cursor */
-.custom-cursor {
-  width: 20px;
-  height: 20px;
-  border: 2px solid #00d4ff;
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  z-index: 9999;
-  transition: transform 0.15s ease, border-color 0.3s ease, background 0.3s ease;
-  mix-blend-mode: difference;
-}
-
-.custom-cursor.hovering {
-  transform: scale(1.5);
-  border-color: #a855f7;
-  background: rgba(168, 85, 247, 0.2);
 }
 
 /* Scroll Progress Bar */
@@ -144,16 +101,6 @@
   background: linear-gradient(90deg, #00d4ff, #a855f7, #06b6d4);
   z-index: 9999;
   transition: width 0.1s ease;
-}
-
-/* Project Card Hover */
-.project-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2), 0 0 60px rgba(168, 85, 247, 0.1);
 }
 
 /* Button Glow */
@@ -227,24 +174,6 @@
 @keyframes blink {
   from, to { opacity: 1; }
   50% { opacity: 0; }
-}
-
-/* Timeline */
-.timeline-item::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: linear-gradient(180deg, #00d4ff, #a855f7);
-  transform: translateX(-50%);
-}
-
-@media (max-width: 768px) {
-  .timeline-item::before {
-    left: 20px;
-  }
 }
 
 /* Noise texture overlay */

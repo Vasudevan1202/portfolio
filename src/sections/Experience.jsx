@@ -6,7 +6,7 @@ const experiences = [
     icon: Briefcase,
     title: 'Unity Engineer Intern',
     company: 'Tech Startup',
-    period: '2024 - Present',
+    period: '2026 - Present',
     description:
       'Developing interactive games and applications using Unity engine. Building cross-platform experiences with focus on performance and user engagement.',
     tags: ['Unity', 'C#', 'Game Development'],
@@ -16,7 +16,6 @@ const experiences = [
     icon: Award,
     title: 'Budding Techie Competition',
     company: 'Technical Symposium',
-    period: '2024',
     description:
       'Participated in competitive coding and development challenges. Showcased problem-solving skills and ability to build under pressure.',
     tags: ['Competition', 'Problem Solving', 'Teamwork'],
@@ -26,7 +25,6 @@ const experiences = [
     icon: GraduationCap,
     title: 'Frontend Learning Journey',
     company: 'Self-directed & Online',
-    period: '2022 - Present',
     description:
       'Mastered modern frontend technologies through intensive self-study and online courses. Built numerous projects to solidify understanding.',
     tags: ['React', 'JavaScript', 'CSS', 'HTML'],
@@ -36,7 +34,6 @@ const experiences = [
     icon: Code,
     title: 'Web Development Projects',
     company: 'Personal & Freelance',
-    period: '2023 - Present',
     description:
       'Delivered multiple client projects from concept to deployment. Focused on responsive design, accessibility, and modern UI patterns.',
     tags: ['React', 'Tailwind', 'Node.js'],
@@ -44,12 +41,9 @@ const experiences = [
   },
 ];
 
-export default function Experience({ isDark }) {
+export default function Experience() {
   return (
-    <section
-      id="experience"
-      className={`py-16 sm:py-24 md:py-32 ${isDark ? 'bg-dark-900' : 'bg-white'}`}
-    >
+    <section id="experience" className="py-16 sm:py-24 md:py-32 bg-dark-900">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <motion.div
           initial="hidden"
@@ -65,29 +59,19 @@ export default function Experience({ isDark }) {
             className="text-center mb-12 sm:mb-16"
             variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }}
           >
-            <motion.p
-              className={`text-xs sm:text-sm font-medium tracking-wider uppercase mb-3 ${
-                isDark ? 'text-neon-pink' : 'text-pink-600'
-              }`}
-            >
+            <motion.p className="text-xs sm:text-sm font-medium tracking-wider uppercase mb-3 text-neon-pink">
               My Journey
             </motion.p>
-            <h2
-              className={`text-3xl sm:text-4xl md:text-5xl font-bold font-poppins ${
-                isDark ? 'text-white' : 'text-dark-900'
-              }`}
-            >
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-poppins text-white">
               Experience & Growth
             </h2>
           </motion.div>
 
           {/* Timeline */}
           <div className="relative">
-            {/* Timeline Line - Hidden on mobile */}
+            {/* Timeline Line */}
             <div
-              className={`absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 hidden md:block ${
-                isDark ? 'bg-dark-600' : 'bg-gray-200'
-              }`}
+              className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 hidden md:block bg-dark-600"
               style={{
                 background: `linear-gradient(180deg, #00d4ff, #a855f7, #ec4899)`,
               }}
@@ -108,7 +92,7 @@ export default function Experience({ isDark }) {
                 >
                   {/* Timeline Dot */}
                   <div
-                    className={`absolute left-8 md:left-1/2 top-0 w-4 h-4 rounded-full transform -translate-x-1/2 z-10 hidden md:block`}
+                    className="absolute left-8 md:left-1/2 top-0 w-4 h-4 rounded-full transform -translate-x-1/2 z-10 hidden md:block"
                     style={{
                       backgroundColor: exp.color,
                       boxShadow: `0 0 20px ${exp.color}`,
@@ -121,20 +105,16 @@ export default function Experience({ isDark }) {
                   {/* Content Card */}
                   <motion.div
                     whileHover={{ scale: 1.02 }}
-                    className={`relative p-4 sm:p-6 rounded-xl sm:rounded-2xl ${
-                      isDark
-                        ? 'bg-dark-800/50 hover:bg-dark-700/50 border border-white/5'
-                        : 'bg-gray-50 hover:bg-white hover:shadow-xl border border-gray-100'
-                    } transition-all duration-300`}
+                    className="relative p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-dark-800/50 hover:bg-dark-700/50 border border-white/5 transition-all duration-300"
                   >
                     <div
-                      className={`absolute top-0 left-0 w-1 h-full rounded-l-xl sm:rounded-l-2xl`}
+                      className="absolute top-0 left-0 w-1 h-full rounded-l-xl sm:rounded-l-2xl"
                       style={{ backgroundColor: exp.color }}
                     />
 
                     <div className="flex items-start gap-3 sm:gap-4">
                       <div
-                        className={`flex w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl items-center justify-center shrink-0 md:hidden`}
+                        className="flex w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl items-center justify-center shrink-0 md:hidden"
                         style={{ backgroundColor: `${exp.color}20` }}
                       >
                         <exp.icon size={18} style={{ color: exp.color }} />
@@ -147,36 +127,20 @@ export default function Experience({ isDark }) {
                             className="hidden md:block"
                             style={{ color: exp.color }}
                           />
-                          <h3
-                            className={`text-base sm:text-xl font-bold font-poppins ${
-                              isDark ? 'text-white' : 'text-dark-900'
-                            }`}
-                          >
+                          <h3 className="text-base sm:text-xl font-bold font-poppins text-white">
                             {exp.title}
                           </h3>
                         </div>
 
-                        <p
-                          className={`text-xs sm:text-sm font-medium mb-1 ${
-                            isDark ? 'text-gray-400' : 'text-dark-500'
-                          }`}
-                        >
+                        <p className="text-xs sm:text-sm font-medium mb-1 text-gray-400">
                           {exp.company}
                         </p>
 
-                        <p
-                          className={`text-xs mb-3 sm:mb-4 ${
-                            isDark ? 'text-gray-500' : 'text-dark-400'
-                          }`}
-                        >
+                        <p className="text-xs mb-3 sm:mb-4 text-gray-500">
                           {exp.period}
                         </p>
 
-                        <p
-                          className={`text-xs sm:text-sm mb-3 sm:mb-4 ${
-                            isDark ? 'text-gray-300' : 'text-dark-600'
-                          }`}
-                        >
+                        <p className="text-xs sm:text-sm mb-3 sm:mb-4 text-gray-300">
                           {exp.description}
                         </p>
 
@@ -184,11 +148,7 @@ export default function Experience({ isDark }) {
                           {exp.tags.map((tag) => (
                             <span
                               key={tag}
-                              className={`px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-xs ${
-                                isDark
-                                  ? 'bg-dark-600 text-gray-300'
-                                  : 'bg-gray-100 text-dark-600'
-                              }`}
+                              className="px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-xs bg-dark-600 text-gray-300"
                             >
                               {tag}
                             </span>
